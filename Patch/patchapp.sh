@@ -6,11 +6,10 @@
 TEMP_PATH="${SRCROOT}/Temp"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/a.ipa"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/app.ipa"
-#TARGET_IPA_PATH="${SRCROOT}/Patch/微信-6.5.18(越狱应用).ipa"
+#TARGET_IPA_PATH="${SRCROOT}/Patch/微信-6.5.5(越狱应用).ipa"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/app-wechat-resigned.ipa"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/王者荣耀：无处不团，2亿好友都在玩-1.18.101(越狱应用).ipa"
-#TARGET_IPA_PATH="${SRCROOT}/Patch/追书神器-2.25.1.ipa"
-#TARGET_IPA_PATH="${SRCROOT}/Patch/追书神器-2.24.14.ipa"
+TARGET_IPA_PATH="${SRCROOT}/Patch/追书神器-2.25.1.ipa"
 
 rm -rf "$TEMP_PATH" || true
 mkdir -p "$TEMP_PATH" || true
@@ -31,12 +30,12 @@ rm -rf "$TARGET_APP_PATH/Watch" || true
 rm -rf "$TARGET_APP_PATH/*.lproj" || true
 
 #可改图标
-echo "icon replace"
-rm  "$TARGET_APP_PATH/AppIcon60x60@2x.png" || true
-rm  "$TARGET_APP_PATH/Icon@2x.png" || true
-cp "${SRCROOT}/Patch/AppIcon60x60@2x.png" "$TARGET_APP_PATH/AppIcon60x60@2x.png"  || true
-cp "${SRCROOT}/Patch/AppIcon60x60@2x.png" "$TARGET_APP_PATH/Icon@2x.png"  || true
-echo "icon replace finish"
+#echo "icon replace"
+#rm  "$TARGET_APP_PATH/AppIcon60x60@2x.png" || true
+#rm  "$TARGET_APP_PATH/Icon@2x.png" || true
+#cp "${SRCROOT}/Patch/AppIcon60x60@2x.png" "$TARGET_APP_PATH/AppIcon60x60@2x.png"  || true
+#cp "${SRCROOT}/Patch/AppIcon60x60@2x.png" "$TARGET_APP_PATH/Icon@2x.png"  || true
+#echo "icon replace finish"
 
 # 3. 如果有app包含Framework的话，要对Framework进行代码签名.
 TARGET_APP_FRAMEWORKS_PATH="$BUILT_PRODUCTS_DIR/$TARGET_NAME.app/Frameworks"
@@ -60,7 +59,7 @@ chmod +x "$TARGET_APP_PATH/$APP_BINARY"
 #删除scheme能力
 /usr/libexec/PlistBuddy -c "Delete :LSApplicationQueriesSchemes" "$TARGET_APP_PATH/Info.plist"
 
-#改名 可改微信app名字
+#改名
 TARGET_DISPLAY_NAME="看书"
 /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $TARGET_DISPLAY_NAME" "$TARGET_APP_PATH/zh_CN.lproj/InfoPlist.strings"
 /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $TARGET_DISPLAY_NAME" "$TARGET_APP_PATH/Info.plist"
@@ -85,3 +84,5 @@ do
 FILENAME=$(basename $DYLIB)
 /usr/bin/codesign --force --sign "$EXPANDED_CODE_SIGN_IDENTITY" "$DYLIB"
 done
+
+rm -rf "$TEMP_PATH" || true

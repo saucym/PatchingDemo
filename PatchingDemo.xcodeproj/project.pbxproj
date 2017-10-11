@@ -444,8 +444,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucym.books;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21170cff-e494-44d6-bebd-e4a51a94a7ff";
-				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Provisioning";
+				PROVISIONING_PROFILE = "982f8f40-a319-469f-9252-ec3a4f740df0";
+				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Provisioning Profiles";
 			};
 			name = Debug;
 		};
