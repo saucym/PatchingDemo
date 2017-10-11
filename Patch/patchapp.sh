@@ -4,8 +4,9 @@
 
 # 1. 创建一个临时目录，把ipa文件解压到临时目录下，取app文件
 TEMP_PATH="${SRCROOT}/Temp"
+#TARGET_IPA_PATH="${SRCROOT}/Patch/a.ipa"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/app.ipa"
-TARGET_IPA_PATH="${SRCROOT}/Patch/微信-6.5.18(越狱应用).ipa"
+#TARGET_IPA_PATH="${SRCROOT}/Patch/微信-6.5.18(越狱应用).ipa"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/app-wechat-resigned.ipa"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/王者荣耀：无处不团，2亿好友都在玩-1.18.101(越狱应用).ipa"
 #TARGET_IPA_PATH="${SRCROOT}/Patch/追书神器-2.25.1.ipa"
